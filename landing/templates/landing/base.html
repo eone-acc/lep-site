@@ -1,0 +1,130 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Энергосервисная компания "ЛЭП-Сервис"</title>
+  </head>
+  <body>
+<!-- HEADER -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'images/LogoBlue.png' %}" alt="img"> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="{% url 'about' %}" class="nav-link">О НАС</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'projects' %}" class="nav-link">ПОРТФОЛИО</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ИНФОРМАЦИЯ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'contacts' %}" class="nav-link">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+{% block content %}
+{% endblock %}
+
+{% block slider %}
+{% endblock %}
+
+
+{#<!-- Block main -->#}
+{#    <div class="container-fluid">#}
+{#        <div class="row jumbotron">#}
+{#            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">#}
+{#                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi asperiores consectetur consequatur cum cumque cupiditate ducimus excepturi, iste itaque modi nobis quasi quo repellat repudiandae sit tempore! Asperiores, fugit?</p>#}
+{#            </div>#}
+{#            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">#}
+{#                <a href="#"><button class="bnt btn-success btn-lg" type="button">Далее </button></a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#<!-- Block param -->#}
+{#    <div class="container-fluid">#}
+{#        <div class="row text-center alert">#}
+{#            <div class="col-12">#}
+{#                <h1 class="display-4">Что-то</h1>#}
+{#            </div>#}
+{#            <hr>#}
+{#            <div class="col-12">#}
+{#                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto assumenda earum est, facere illum minima nemo nesciunt qui quis quo repellendus reprehenderit sapiente sed tempore temporibus ullam unde, vel veniam voluptates. Ab accusamus adipisci commodi delectus dicta dignissimos eligendi enim esse, expedita impedit in libero magnam minus mollitia nesciunt nostrum officiis pariatur placeat quibusdam quos ratione reprehenderit ut vitae.</p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+
+{% block about %}
+{% endblock %}
+
+{% block fixed_image %}
+{% endblock %}
+
+
+{% block closed_section %}
+{% endblock %}
+
+{% block lattest_projects %}
+{% endblock %}
+
+{% block we_can %}
+{% endblock %}
+
+<!-- Footer -->
+    <footer class="container-fluid footer sticky-bottom">
+        <div class="container-fluid">
+            <div class="row padding text-center">
+                <div class="col-12">
+                    <h2>Наши контакты</h2>
+                </div>
+                <div class="col-md-4 social padding">
+                    <div ><a><i class="fa fa-compass" aria-hidden="true"></i></a></div>
+                    <div > <b>Адрес:</b> <br> 400001, г.Волгоград, ул.Донецкая, д.16, оф.204</div>
+
+                </div>
+                <div class="col-md-4 social padding">
+                    <div ><a><i class="fa fa-phone"></i></a></div>
+                    <div > <b>Телефон:</b> <br> +7(8442) 25-1115 <br> +7(8442) 25-1064</div>
+
+                </div>
+                <div class="col-md-4 social padding">
+                    <div ><a><i class="fa fa-envelope"></i></a></div>
+                    <div > <b>E-mail:</b> <br> lep-serwis@yandex.ru <br> info@lepservice.ru</div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+</html>

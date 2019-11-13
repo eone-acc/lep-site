@@ -1,0 +1,28 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="offset-1 col-md-3 social padding">
+                <h4 class="text-center">КОНТАКТЫ</h4>
+                <div class="row ">
+                    <div class="col-md-3 "><a><i class="fa fa-compass" aria-hidden="true"></i></a></div>
+                    <div class="col-md-9"> <b>Адрес:</b> <br> 400001, г.Волгоград, ул.Донецкая, д.16, оф.204</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><a><i class="fa fa-phone"></i></a></div>
+                    <div class="col-md-9"><b>Телефон:</b> <br> +7(8442) 25-1115 <br> +7(8442) 25-1064</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"><a><i class="fa fa-envelope"></i></a></div>
+                    <div class="col-md-9"><b>E-mail:</b> <br> lep-serwis@yandex.ru <br> info@lepservice.ru</div>
+                </div>
+            </div>
+            <div class="col-md-7 padding">
+                <h4 class="text-left"> КАК НАС НАЙТИ</h4>
+                <iframe src="https://yandex.ru/map-widget/v1/-/CGTjb-Mr" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}

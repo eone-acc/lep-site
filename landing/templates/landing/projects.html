@@ -1,0 +1,30 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="container-fluid padding">
+        <div class="row alert text-center">
+            <div class="col-12">
+                <h1 class="display-4">Реализованные проекты</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="container padding">
+        <div class="row padding">
+            {% for post_image in posts_images %}
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{post_image.img.url}}" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h4 class="card-title"> {{ post_image.post.title }} </h4>
+                        <p class="card-text"> {{ post_image.post.text | truncatewords:10}} </p>
+                        <p class="card-text"> Дата сдачи объекта {{ post_image.post.workoff_date | default_if_none:'  '}} </p>
+                        <a href="{% url 'detail' slug=post_image.post.slug %}" class="btn btn-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

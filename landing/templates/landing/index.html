@@ -1,0 +1,156 @@
+{% extends 'landing/base.html' %}
+{% load staticfiles %}
+
+{% block slider %}
+<!-- SLIDER -->
+    <div class="carousel slide" data-ride="carousel" id="slides">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/1слайд.jpg' %}">
+{#                <div class="carousel-caption">#}
+{#                    <h1 class="display-2">Энергосервис</h1>#}
+{#                    <h3>экономия и эффективность</h3>#}
+{#                    <button type="button" class="btn btn-outline-light btn-lg">Посмотреть</button>#}
+{#                    <button type="button" class="btn btn-outline-warning btn-lg">Демо</button>#}
+{#                </div>#}
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/2слайд-1.jpg' %}">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/3слайд-1.jpg' %}">
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block about %}
+<!-- Block about -->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="offset-lg-2 col-lg-4">
+                <h2>О Компании</h2>
+                <br><p>Более 10 лет назад мы собрали команду профессионалов, специалистов, последовательно добивающихся исполнения самых разных задач в области энергетики.
+                    Ключевым аспектом нашей деятельности является столь архиважное для нашей страны направление, как энергосбережение.</p>
+                <p>Что мы делаем?</p>
+                <p>В самом общем смысле – меняем любое неэффективное энергоемкое оборудование на более новое, потребляющее в разы меньше электроэнергии, воды, тепла, других ресурсов, а в итоге – денежных средств. Любому предприятию сложно влиять на внешние факторы своей деятельности, но любое может попробовать найти возможность существенной экономии, просто подняв не количественную, но качественную эффективность своей работы.
+                </p>
+                <p>Нашей главной сферой оказания услуг является уличное и промышленное освещение. Об этой деятельности приятно рассказывать друзьям и коллегам, ее результаты исключительно наглядны и говорят сами за себя… Когда улицы российских городов окутываются сиянием наших светильников, мы видим и гигантскую экономию энергии, и падение статистики по преступности на светлых улицах, снижение аварийности на дорогах и депрессии людей от отсутствия света, даже то, что жители таких городов просто видят реальные перемены к лучшему вокруг себя.
+                </p>
+                <p>Попробуйте наши возможности, познакомьтесь с нашей командой, примерьте на себя и Ваш бизнес наши решения. Уверены, нам с Вами по пути!</p>
+                <a href="{%  url 'about' %}" class="btn btn-danger">О нас</a>
+            </div>
+            <div class="col-lg-4">
+                <br>
+                <img src="{% static 'images/5-e1524129939663-602x837.jpg' %}" alt="" class="img-fluid">
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block fixed_image %}
+<!-- Fixed Image block -->
+    <figure>
+        <div class="fixed-wrap">
+            <div id="fixed">
+
+            </div>
+        </div>
+    </figure>
+{% endblock %}
+
+{% block closed_section %}
+<!-- Closed section block -->
+    <div class="text-center">
+        <button type="button" id="gifsBtn" class="btn btn-success" data-toggle="collapse" data-target="#gifs">Принцип работы энергосервисного контракта</button>
+        <div class="collapse" id="gifs">
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <img src="{% static 'images/infolep-1024x731.jpg' %}" class="gif-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block lattest_projects %}
+<!-- Cards block -->
+    <div class="container-fluid padding">
+        <div class="row alert text-center">
+            <div class="col-12">
+                <h1 class="display-4">Последние реализованные проекты</h1>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="container padding">
+        <div class="row padding">
+            {% for post_image in posts_images %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{post_image.img.url}}" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h4 class="card-title"> {{ post_image.post.title }} </h4>
+                        <p class="card-text"> {{ post_image.post.text | truncatewords:5 }} </p>
+                        <p class="card-text"> Дата сдачи объекта: {{ post_image.post.workoff_date }} </p>
+                        <a href="{{post_image.post.get_absolute_url}}" class="btn btn-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block we_can %}
+    <!-- Block param -->
+    <div class="container-fluid padding" >
+         <div class="offset-1 col-10">
+        <div class="row text-center padding">
+            <div class="col-12 text-center">
+                <h2  >Наши возможности</h2>
+                <h4 class="pb-4">Что мы делаем</h4>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-3 weCan">
+                <i class="fa fa-binoculars"></i>
+                <p>Предварительное обследование</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-3 weCan">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <p>Выявление потенциала экономии</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-3 weCan">
+                <i class="fa fa-sun"></i>
+                <p>Разработка программы энергосбережения</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-3 weCan">
+                <i class="fa fa-rub" aria-hidden="true"></i>
+                <p>Привлечение фининсирования для проекта</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-4 weCan">
+                <i class="fa fa-briefcase"></i>
+                <p>Установка высококачественного оборудования</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-4 weCan">
+                <i class="fa fa-key"></i>
+                <p>Релизация проекта модернизации "под ключ"</p>
+            </div>
+            <div class="col-xs-12 cl-sm-6 col-md-4 weCan">
+                <i class="fa fa-check-square"></i>
+                <p>Расчеты по котракту</p>
+            </div>
+        </div>
+        <hr class="my-4">
+         </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+
+{% block slider %}
+<!-- SLIDER -->
+    <div class="carousel slide" data-ride="carousel" id="slides">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/6.png' %}">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Энергосервис</h1>
+                    <h3>экономия и эффективность</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg">Посмотреть</button>
+                    <button type="button" class="btn btn-outline-warning btn-lg">Демо</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/hong-kong-1990268.jpg' %}">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/2slide-1784x675.jpg' %}">
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
